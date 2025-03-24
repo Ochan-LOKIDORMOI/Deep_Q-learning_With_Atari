@@ -88,13 +88,7 @@ This will launch the game and allow you to observe how the trained DQN agent int
 
 ## The Agent in Realtime
 
-
-
-https://github.com/user-attachments/assets/8b66ab3c-ddd8-4964-8bf0-35c8dd8d78cf
-
-
-
-[Video of the game](https://github.com/user-attachments/assets/e328e23b-9b54-4032-9060-e8c875d098cf)
+[![Video Preview](https://img.youtube.com/vi/LEw0tEGN4Ug/0.jpg)](https://www.youtube.com/watch?v=LEw0tEGN4Ug)
 
 ## Group Contributions
 
