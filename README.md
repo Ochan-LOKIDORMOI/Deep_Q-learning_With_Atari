@@ -24,11 +24,23 @@ Breakout uses a **discrete reward system** because the game has a clear win/lose
 
 ## Project Structure
 
-
+```md
+Deep_Q-learning_With_Atari/
+│
+├── train.py            # Script for training the model
+├── play.py             # Script for running/playing with the trained model
+├── requirements.txt    # List of Python dependencies
+└── README.md           # Project documentation (this file)
+```
 
 ## Hyperparameter Tuning Results
 
-
+| **Hyperparameter Set** | **Noted Behavior** |
+|------------------------|--------------------|
+| `lr= 1e-3`, `gamma=0.99`, `batch=64`, `epsilon_start=1.0`, `epsilon_end=0.2`, `epsilon_decay=0.02` | In the first training, the agent was limited to paddle movement and often missed bricks. The agent did not have enough opportunities to explore and learn efficient paddle movements given the current hyperparameters. Increasing exploration initially and fine-tuning other parameters could improve performance. |
+| `lr=5e-4`, `gamma=0.99`, `batch=128`, `epsilon_start=1.0`, `epsilon_end=0.01`, `epsilon_decay=0.1`, `buffer_size=500000`, `train_freq=4` | During training, the model learned quickly due to a balanced learning rate, achieving stable convergence. When playing the game, the agent showed improvement, though at times it waited for the ball to hit it instead of actively moving toward it. |
+| `lr=1e-3`, `gamma=0.99`, `batch=64`, `epsilon_start=1.0`, `epsilon_end=0.03`, `epsilon_decay=0.2`, `buffer_size=100000`, `train_freq=4` | The higher learning rate increased the risk of instability, and the small buffer size meant the model retained fewer experiences, limiting its adaptability. In play mode, the agent frequently missed the target, sometimes losing all five lives without scoring a single point. |
+| `lr= 1e-4`, `gamma= 0.99`, `batch= 8`, `epsilon_start= 1.0`, `epsilon_end= 0.05`, `epsilon_decay= 0.1` | With `epsilon_start = 1.0`, the agent initially took random actions, causing the paddle to stay in one corner. As `epsilon` decayed at a 0.1 rate, exploration decreased, allowing the agent to refine its strategy. Over time, with `gamma = 0.99` reinforcing long-term rewards, the paddle began moving efficiently across the screen, maximizing points and achieving higher rewards. The batch size of 8 contributed to stable learning, balancing exploration and exploitation. |
 
 
 
@@ -63,7 +75,8 @@ Once training is complete, the trained model will be automatically saved in the 
 
 **Pretrained Model Available:**
 
-If you prefer not to train from scratch, a pretrained model is already provided in the repository.
+If you prefer not to train from scratch, a pretrained model is already provided in this link.
+[You can download here](https://drive.google.com/file/d/1JjRZnc-9aBdIz4ykkzaJkryRJ9EWGg6R/view?usp=sharing)
 
 4. **Playing the Game**
 
@@ -73,6 +86,9 @@ To watch the trained agent play Breakout in real time, run:
 
 This will launch the game and allow you to observe how the trained DQN agent interacts with the environment.
 
+## The Agent in Realtime
+
+[Video of the game](https://github.com/user-attachments/assets/e328e23b-9b54-4032-9060-e8c875d098cf)
 
 ## Group Contributions
 
@@ -82,9 +98,9 @@ Team Members:
 
 1. Ochan LOKIDORMOI
 
-2. Elvis Bakunzi
+2. Kathrine Ganda
 
-3. Kathrine Ganda
+3. Elvis Guy Bakunzi
 
 
 ## 📌 Work Distribution
