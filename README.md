@@ -40,8 +40,7 @@ Start by cloning the repository to your local machine.
 On your terminal, run:
 
 ```
-git clone https://github.com/k-ganda/Chatbot_ML.git
-cd Chatbot_ML
+https://github.com/Ochan-LOKIDORMOI/Deep_Q-learning_With_Atari.git
 ```
 
 2.  **Install Dependencies**
